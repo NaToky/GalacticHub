@@ -35,7 +35,7 @@ export const searchShips = createAsyncThunk("search/searchShips", async (_, { ge
 	const state = getState() as RootState
 	const classFilter = state.search.classFilter
 	const budgetFilter = state.search.budgetFilter
-	const response = await fetch(`http://localhost:3000/starships/?class=${classFilter}&budget=${budgetFilter}`)
+	const response = await fetch(`http://localhost:3001/starships/?class=${classFilter}&budget=${budgetFilter}`)
 	if (!response.ok) {
 		throw new Error("Failed to fetch ships")
 	}
